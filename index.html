@@ -1,0 +1,173 @@
+Of course! I’ll keep it straightforward. Here's the complete code all at once, no extra explanations:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe6ee, #ffd6e8, #fff0f5);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+            padding: 20px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            color: #ff4f87;
+            margin-bottom: 20px;
+            font-size: 3rem;
+        }
+
+        p {
+            color: #ff5f98;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 15px 35px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn, .nextBtn {
+            background: #ff4f87;
+            color: white;
+        }
+
+        #yesBtn:hover, .nextBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background: white;
+            color: #ff4f87;
+            border: 2px solid #ff4f87;
+            position: relative;
+        }
+
+        .big {
+            font-size: 6rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: float 6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+
+        #tryAgain {
+            color: #ff4f87;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="sharmeeli.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <h1>Do you love me, Ayushi? ❤️</h1>
+    <p>A little surprise for someone special... 💕</p>
+
+    <button id="yesBtn">Yes 🥰</button>
+    <button id="noBtn">No 😢</button>
+
+    <div id="tryAgain"></div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <div class="big">💖</div>
+    <h1>I Love You Too! ❤️</h1>
+    <p>You just made my heart so happy! 🥺💕</p>
+
+    <button class="nextBtn" onclick="goToPage3()">
+        Next 💌
+    </button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <div class="big">🤗</div>
+    <h1>Sending You a Big Digital Hug!</h1>
+
+    <p>
+        🫂💕<br><br>
+        No matter where you are, this hug is just for you!
+    </p>
+
+    <button class="nextBtn" onclick="goToPage4()">
+        One More Thing 🌸
+    </button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+    <div class="big">🌸💕🌸</div>
+    <h1>Thank You ❤️</h1>
+
+    <p>Hope this little surprise made you smile! 🥺💕</p>
+</div>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    // Start music on first click
+    document.addEventListener("click", () => {
+        music.play().catch(() => {});
+    }, { once: true });
+
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - 180);
+        const y = Math.random() * (window.innerHeight - 100
+```
